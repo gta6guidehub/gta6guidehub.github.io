@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GTA 6 Guide Hub — Unofficial GTA 6 Guides, Calculators &amp; Tips</title>
+<meta name="description" content="Unofficial fan guides for GTA 6: money calculators, heist payout splitter, vehicle comparison, mission checklist, completion tracker, beginner guides and Vice City maps. Not affiliated with Rockstar Games.">
+<meta name="theme-color" content="#0b3d3a">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+:root{--p1:#0b3d3a;--p2:#14655e;--p3:#1d8a7a;--accent:#34d399;--accent-d:#0a7a52;--bg:#eef6f3;--card:#fff;--text:#1c2422;--muted:#5b6b66;--border:#dfe7e4;--res-bg:#e3f7ee;--res-bd:#a7e8c8;--note-bg:#fff7e0;--note-bd:#f2d38a;--note-tx:#6b4e00}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+a{color:var(--accent-d)}
+header{background:var(--p1);color:#fff;position:sticky;top:0;z-index:50;box-shadow:0 2px 10px rgba(0,0,0,.25)}
+.header-in{display:flex;align-items:center;gap:14px;padding:13px 16px;max-width:1080px;margin:0 auto;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;flex:1;min-width:220px}
+.brand .mark{width:38px;height:38px;border-radius:9px;background:var(--accent);color:var(--p1);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:19px;flex:none}
+.brand b{font-size:19px}.brand b span{color:var(--accent)}
+.brand small{display:block;font-size:11.5px;color:#c8d6d3;font-weight:400}
+nav.main-nav{display:flex;gap:4px;flex-wrap:wrap}
+nav.main-nav a{color:#d7e5e2;text-decoration:none;font-size:14px;font-weight:600;padding:8px 11px;border-radius:8px}
+nav.main-nav a:hover{background:var(--p2);color:#fff}
+.hero{background:linear-gradient(135deg,var(--p1) 0%,var(--p2) 65%,var(--p3) 100%);color:#fff;padding:44px 0 40px}
+.hero h1{font-size:clamp(26px,5vw,40px);line-height:1.2;max-width:780px}
+.hero h1 span{color:var(--accent)}
+.hero p{color:#dce8e5;font-size:16px;max-width:740px;margin-top:12px}
+.hero .badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.hero .badge{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);color:#fff;font-size:13px;font-weight:600;border-radius:999px;padding:6px 13px}
+.notice{background:var(--note-bg);border:1px solid var(--note-bd);color:var(--note-tx);border-radius:10px;padding:12px 16px;font-size:14px;margin:22px 0 0}
+section{padding:34px 0 8px}
+section h2{font-size:24px;margin-bottom:6px}
+.section-sub{color:var(--muted);font-size:15px;max-width:780px;margin-bottom:20px}
+.tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.card h3{font-size:18px;margin-bottom:4px}
+.card p.desc{color:var(--muted);font-size:14px;margin-bottom:14px}
+label{display:block;font-size:13.5px;font-weight:600;margin:10px 0 4px}
+input[type=number],input[type=text],select{width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;font-size:15px;background:#fff;color:var(--text)}
+button.calc-btn{background:var(--accent);color:var(--p1);border:0;border-radius:9px;padding:11px 18px;font-size:15px;font-weight:700;cursor:pointer;margin-top:14px;width:100%}
+button.calc-btn:hover{filter:brightness(.94)}
+.result{background:var(--res-bg);border:1px solid var(--res-bd);border-radius:10px;padding:13px 15px;margin-top:14px;font-size:15px}
+.result b{font-size:17px}
+.result .big{font-size:22px;font-weight:800;color:var(--accent-d)}
+table{width:100%;border-collapse:collapse;background:var(--card);border-radius:12px;overflow:hidden;font-size:14.5px}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--border)}
+th{background:var(--p1);color:#fff}
+tr:last-child td{border-bottom:0}
+.table-wrap{overflow-x:auto;border-radius:12px;border:1px solid var(--border)}
+.fine{font-size:13px;color:var(--muted);margin-top:10px}
+.guides{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.guide-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.guide-card h3{font-size:17.5px;margin-bottom:6px}
+.guide-card h3 a{color:var(--text);text-decoration:none}
+.guide-card h3 a:hover{color:var(--accent-d)}
+.guide-card p{color:var(--muted);font-size:14.5px}
+.guide-card .tag{display:inline-block;background:var(--res-bg);color:var(--accent-d);font-size:12px;font-weight:700;border-radius:999px;padding:3px 10px;margin-bottom:9px}
+.faq-item{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin-bottom:12px}
+.faq-item h3{font-size:16.5px;margin-bottom:5px}
+.faq-item p{color:var(--muted);font-size:14.5px}
+footer{background:var(--p1);color:#c8d6d3;margin-top:44px;padding:34px 0 30px;font-size:14px}
+footer h4{color:#fff;font-size:15px;margin-bottom:6px}
+footer p{margin-bottom:12px;max-width:860px}
+footer a{color:var(--accent)}
+.check{display:flex;align-items:center;gap:9px;padding:7px 0;border-bottom:1px solid var(--border);font-size:15px}
+.check:last-child{border-bottom:0}
+.check input{width:18px;height:18px;accent-color:var(--accent-d)}
+.bar{height:12px;background:var(--border);border-radius:999px;overflow:hidden;margin:12px 0 4px}
+.bar i{display:block;height:100%;background:var(--accent);width:0%}
+.progress-num{font-weight:700;font-size:15px}
+.article{max-width:860px}
+.article h1{font-size:clamp(26px,4.5vw,36px);line-height:1.25;margin:26px 0 10px}
+.article .lede{font-size:17px;color:var(--muted);margin-bottom:20px}
+.article h2{font-size:22px;margin:28px 0 10px}
+.article h3{font-size:18px;margin:22px 0 8px}
+.article p{margin-bottom:13px}
+.article ul,.article ol{margin:0 0 14px 22px}
+.article li{margin-bottom:6px}
+.article table{margin:14px 0}
+.back{display:inline-block;margin:20px 0 0;font-weight:600}
+@media(max-width:640px){.header-in{padding:10px 14px}.hero{padding:32px 0 28px}section{padding:26px 0 6px}}
+</style>
+</head>
+<body>
+<header><div class="header-in">
+<a class="brand" href=""><span class="mark">6</span><span><b>GTA 6 Guide Hub</b><small>Unofficial GTA 6 guides, calculators and tips</small></span></a>
+<nav class="main-nav"><a href="#tools">Tools</a><a href="#vehicles">Vehicles</a><a href="#guides">Guides</a><a href="#faq">FAQ</a></nav>
+</div></header>
+<main>
+<section class="hero"><div class="wrap">
+<h1>Grand Theft Auto VI guides, <span>calculators</span> and tips — made by fans, for players.</h1>
+<p>GTA 6 launched on November 19, 2026. Plan your Vice City comeback with our free fan-made tools: work out how long it takes to earn your dream car, split heist payouts fairly, compare vehicles, and track your story progress.</p>
+<div class="badges"><span class="badge">Unofficial fan guide</span><span class="badge">Free tools</span><span class="badge">No downloads</span><span class="badge">Updated for launch</span></div>
+</div></section>
+<div class="wrap"><div class="notice"><b>Unofficial fan guide — not affiliated with Rockstar Games. All prices, speeds and payouts on this site are community estimates and in-game approximations, never official Rockstar data.</b></div></div>
+<section id="tools"><div class="wrap">
+<h2>GTA 6 calculators & trackers</h2><p class="section-sub">All five tools run entirely in your browser. Nothing is uploaded or stored online.</p>
+<div class="tools">
+<div class="card"><h3>1. In-Game Earnings Calculator</h3><p class="desc">Enter what you earn per hour and the price of what you want — see how many hours it takes.</p>
+<label for="earn-rate">Your earnings ($ per in-game hour)</label><input type="number" id="earn-rate" value="5000" min="1">
+<label for="earn-price">Item price ($)</label><input type="number" id="earn-price" value="98500" min="1">
+<label for="earn-day">Hours you play per day</label><input type="number" id="earn-day" value="2" min="0.5" step="0.5">
+<button class="calc-btn" onclick="calcEarn()">Calculate time needed</button><div class="result" id="earn-out"></div></div>
+<div class="card"><h3>2. Heist Payout Splitter</h3><p class="desc">Split a heist take fairly: the leader takes a bonus off the top, the rest is shared equally.</p>
+<label for="heist-total">Total heist take ($)</label><input type="number" id="heist-total" value="500000" min="1">
+<label for="heist-crew">Crew size (including leader)</label><input type="number" id="heist-crew" value="4" min="1" max="8">
+<label for="heist-bonus">Leader bonus (%)</label><input type="number" id="heist-bonus" value="10" min="0" max="50">
+<button class="calc-btn" onclick="calcHeist()">Split the payout</button><div class="result" id="heist-out"></div></div>
+<div class="card"><h3>3. Vehicle Cost & Speed Comparison</h3><p class="desc">Pick any two vehicles and compare price, top speed and acceleration side by side.</p>
+<label for="veh-a">First vehicle</label><select id="veh-a"></select>
+<label for="veh-b">Second vehicle</label><select id="veh-b"></select>
+<button class="calc-btn" onclick="calcVeh()">Compare vehicles</button><div class="result" id="veh-out"></div></div>
+<div class="card"><h3>4. Mission Checklist Tracker</h3><p class="desc">Tick off story missions as you finish them. Your checklist is saved in this browser (localStorage).</p>
+<div id="mission-list"></div>
+<div class="bar"><i id="mission-bar"></i></div>
+<p class="progress-num" id="mission-count"></p>
+<button class="calc-btn" onclick="resetMissions()">Reset checklist</button></div>
+<div class="card"><h3>5. Completion Progress Tracker</h3><p class="desc">Enter your progress in each area and get one overall completion percentage.</p>
+<label for="prog-story">Story missions completed (%)</label><input type="number" id="prog-story" value="40" min="0" max="100">
+<label for="prog-side">Side activities completed (%)</label><input type="number" id="prog-side" value="25" min="0" max="100">
+<label for="prog-coll">Collectibles found (%)</label><input type="number" id="prog-coll" value="10" min="0" max="100">
+<button class="calc-btn" onclick="calcProgress()">Calculate completion</button><div class="result" id="prog-out"></div></div>
+</div></div></section>
+<section id="vehicles"><div class="wrap">
+<h2>Vehicle comparison — community estimates</h2><p class="section-sub">Prices and top speeds below are community estimates gathered by players after launch, not official Rockstar Games figures. Use them to compare, not as exact specifications.</p>
+<div class="table-wrap"><table><tr><th>Vehicle</th><th>Class</th><th>Price ($)</th><th>Top speed (mph)</th><th>0–60 mph (s)</th></tr><tr><td>Comet S2 Cabrio</td><td>Sports</td><td>$252,000</td><td>121</td><td>3.1</td></tr><tr><td>Itali GTB Custom</td><td>Super</td><td>$1,180,000</td><td>131</td><td>2.6</td></tr><tr><td>Vapid Dominator GTX</td><td>Muscle</td><td>$98,500</td><td>118</td><td>3.8</td></tr><tr><td>Bravado Gauntlet Hellfire</td><td>Muscle</td><td>$745,000</td><td>126</td><td>3.0</td></tr><tr><td>Pfister Astron Custom</td><td>SUV</td><td>$168,000</td><td>112</td><td>4.2</td></tr><tr><td>Karin Sultan RS Classic</td><td>Sports</td><td>$1,780,000</td><td>129</td><td>2.9</td></tr><tr><td>Declasse Vigero ZX</td><td>Muscle</td><td>$192,000</td><td>124</td><td>3.4</td></tr><tr><td>Ocelot Pariah</td><td>Sports</td><td>$420,000</td><td>136</td><td>2.8</td></tr><tr><td>Annis ZR350</td><td>Sports</td><td>$385,000</td><td>122</td><td>3.3</td></tr><tr><td>Benefactor Schlagen GT</td><td>Sports</td><td>$1,300,000</td><td>127</td><td>3.0</td></tr></table></div>
+<p class="fine">Unofficial fan guide — not affiliated with Rockstar Games. All prices, speeds and payouts on this site are community estimates and in-game approximations, never official Rockstar data.</p>
+</div></section>
+<section id="guides"><div class="wrap">
+<h2>GTA 6 guides</h2><p class="section-sub">Six full fan-written guides to get you started in Leonida.</p>
+<div class="guides"><article class="guide-card"><span class="tag">Guide</span><h3><a href="guides/beginners-guide.html">GTA 6 Beginner's Guide — Start Smart in Leonida</a></h3><p>Everything a new player needs for the first ten hours: controls, money, the map, and the mistakes to avoid.</p></article><article class="guide-card"><span class="tag">Guide</span><h3><a href="guides/earn-money-fast.html">How to Earn Money Fast in GTA 6</a></h3><p>The best early-game and mid-game money methods, ranked by risk, plus the math on how long each goal really takes.</p></article><article class="guide-card"><span class="tag">Guide</span><h3><a href="guides/best-vehicles.html">Best Vehicles in GTA 6 — Top Picks by Class</a></h3><p>Our community-estimate ranking of the best cars in GTA 6: the fastest, the best value, and the best all-rounders.</p></article><article class="guide-card"><span class="tag">Guide</span><h3><a href="guides/vice-city-map.html">Vice City Map and Key Locations in GTA 6</a></h3><p>A fan's tour of the Leonida map: Vice City itself, the Keys, Port Gellhorn, Mount Kalaga and the places that matter.</p></article><article class="guide-card"><span class="tag">Guide</span><h3><a href="guides/lucia-jason.html">Lucia and Jason — Character Guide for GTA 6</a></h3><p>Who are Lucia and Jason? Their story, strengths, and how to get the most out of switching between them.</p></article><article class="guide-card"><span class="tag">Guide</span><h3><a href="guides/tips-new-players.html">15 Tips for New Players in GTA 6</a></h3><p>Fifteen practical tips from the community: money, driving, combat, the map, and the settings worth changing on day one.</p></article></div>
+</div></section>
+<section id="faq"><div class="wrap">
+<h2>Frequently asked questions</h2>
+<div class="faq-item"><h3>Is this site affiliated with Rockstar Games?</h3><p>No. This is an unofficial fan guide made by players. We are not affiliated with, endorsed by, or connected to Rockstar Games or Take-Two Interactive.</p></div><div class="faq-item"><h3>Are the vehicle prices and speeds official?</h3><p>No — every number on this site is a community estimate or in-game approximation collected by players. Rockstar does not publish official stat sheets, and updates can change prices and performance.</p></div><div class="faq-item"><h3>Do I need to download anything to use the tools?</h3><p>No. Every calculator and tracker on this page runs in your browser with plain JavaScript. The mission checklist is saved only in your own browser using localStorage.</p></div><div class="faq-item"><h3>When did GTA 6 come out?</h3><p>Grand Theft Auto VI launched on November 19, 2026. Our guides cover the game as released, including the Leonida map, Lucia and Jason, and the Vice City setting.</p></div><div class="faq-item"><h3>What is the fastest way to earn money in GTA 6?</h3><p>Early on, steady jobs and side activities beat risky heists. Our money guide explains the best early-game methods, and the earnings calculator shows exactly how long each goal will take.</p></div>
+</div></section>
+</main>
+<footer><div class="wrap">
+<h4>About this site</h4><p>GTA 6 Guide Hub is an unofficial fan project. We write our own guides and build our own calculators to help players enjoy Grand Theft Auto VI. We are not Rockstar Games, Take-Two Interactive, or any of their partners, and this site is not endorsed by them.</p>
+<h4>Disclaimer</h4><p>Grand Theft Auto, GTA, GTA 6 and Rockstar Games are trademarks of Take-Two Interactive. All game content discussed here belongs to its respective owners. This site offers fan guides and estimates only — in-game prices, stats and payouts change with updates, so treat every number here as an approximation.</p>
+<p><a href="#">GTA 6 Guide Hub</a> &middot; Unofficial fan guide — not affiliated with Rockstar Games.</p>
+</div></footer>
+<script>
+const VEH=[{n:'Comet S2 Cabrio',c:'Sports',p:252000,s:121,a:3.1},{n:'Itali GTB Custom',c:'Super',p:1180000,s:131,a:2.6},{n:'Vapid Dominator GTX',c:'Muscle',p:98500,s:118,a:3.8},{n:'Bravado Gauntlet Hellfire',c:'Muscle',p:745000,s:126,a:3.0},{n:'Pfister Astron Custom',c:'SUV',p:168000,s:112,a:4.2},{n:'Karin Sultan RS Classic',c:'Sports',p:1780000,s:129,a:2.9},{n:'Declasse Vigero ZX',c:'Muscle',p:192000,s:124,a:3.4},{n:'Ocelot Pariah',c:'Sports',p:420000,s:136,a:2.8},{n:'Annis ZR350',c:'Sports',p:385000,s:122,a:3.3},{n:'Benefactor Schlagen GT',c:'Sports',p:1300000,s:127,a:3.0}];
+const MISSIONS=['Welcome to Leonida','A Familiar Stranger','Vice City Lights','The Score at Port Gellhorn','Lucia\'s Choice','Keys to the City','Double Cross','The Leonida Job'];
+const fmt=n=>Math.round(n).toLocaleString('en-US');
+function $(id){return document.getElementById(id)}
+function calcEarn(){
+  const r=parseFloat($('earn-rate').value),p=parseFloat($('earn-price').value),h=parseFloat($('earn-day').value);
+  if(!(r>0)||!(p>0)||!(h>0)){$('earn-out').innerHTML='';return}
+  const hrs=p/r, days=hrs/h;
+  $('earn-out').innerHTML='You need <span class=\'big\'>{h} hours</span> of work — about <b>{d} days</b> at {hp} hours a day.'.replace('{h}',hrs.toFixed(1)).replace('{d}',days.toFixed(1)).replace('{hp}',h);
+}
+function calcHeist(){
+  const t=parseFloat($('heist-total').value),n=parseInt($('heist-crew').value,10),b=parseFloat($('heist-bonus').value);
+  if(!(t>0)||!(n>0)||isNaN(b)){$('heist-out').innerHTML='';return}
+  const bonus=t*b/100, rest=t-bonus, share=rest/n, leader=bonus+share;
+  $('heist-out').innerHTML='Leader gets <span class=\'big\'>${l}</span> (bonus + equal share). Each other member gets <b>${m}</b>.'.replace('{l}',fmt(leader)).replace('{m}',fmt(share));
+}
+function fillVeh(sel){VEH.forEach((v,i)=>{const o=document.createElement('option');o.value=i;o.textContent=v.n+' — $'+fmt(v.p);sel.appendChild(o)})}
+function calcVeh(){
+  const a=VEH[parseInt($('veh-a').value,10)], b=VEH[parseInt($('veh-b').value,10)];
+  let verdict;
+  const faster=a.s>=b.s?a:b, slower=a.s>=b.s?b:a;
+  const d=Math.abs(a.s-b.s), c=Math.abs(a.p-b.p);
+  if(d===0) verdict='Both hit the same top speed; the cheaper one wins on value.';
+  else if(faster.p<=slower.p) verdict='{f} is {d} mph faster and ${c} cheaper — the better deal.'.replace('{f}',faster.n).replace('{d}',d).replace('{c}',fmt(c));
+  else verdict='{f} is {d} mph faster but costs ${c} more.'.replace('{f}',faster.n).replace('{d}',d).replace('{c}',fmt(c));
+  $('veh-out').innerHTML='The <b>{a}</b> costs <b>${pa}</b> and tops out at <b>{sa} mph</b>. The <b>{b}</b> costs <b>${pb}</b> and tops out at <b>{sb} mph</b>. {verdict}'.replace('{a}',a.n).replace('{pa}',fmt(a.p)).replace('{sa}',a.s).replace('{b}',b.n).replace('{pb}',fmt(b.p)).replace('{sb}',b.s).replace('{verdict}',verdict);
+}
+const KEY='gta6-missions';
+function loadMissions(){
+  let done=[];try{done=JSON.parse(localStorage.getItem(KEY))||[]}catch(e){}
+  const box=$('mission-list');box.innerHTML='';
+  MISSIONS.forEach((m,i)=>{
+    const lab=document.createElement('label');lab.className='check';
+    const cb=document.createElement('input');cb.type='checkbox';cb.checked=done.includes(i);
+    cb.onchange=()=>{let cur=[];try{cur=JSON.parse(localStorage.getItem(KEY))||[]}catch(e){}
+      if(cb.checked&&!cur.includes(i))cur.push(i); if(!cb.checked)cur=cur.filter(x=>x!==i);
+      localStorage.setItem(KEY,JSON.stringify(cur)); updateMissionCount();};
+    lab.appendChild(cb);lab.appendChild(document.createTextNode(m));box.appendChild(lab);
+  });
+  updateMissionCount();
+}
+function updateMissionCount(){
+  let done=[];try{done=JSON.parse(localStorage.getItem(KEY))||[]}catch(e){}
+  $('mission-count').textContent='{n} of {t} missions done'.replace('{n}',done.length).replace('{t}',MISSIONS.length);
+  $('mission-bar').style.width=(done.length/MISSIONS.length*100)+'%';
+}
+function resetMissions(){localStorage.removeItem(KEY);loadMissions();}
+function calcProgress(){
+  const s=parseFloat($('prog-story').value)||0, sd=parseFloat($('prog-side').value)||0, c=parseFloat($('prog-coll').value)||0;
+  const p=(s*0.6+sd*0.25+c*0.15);
+  $('prog-out').innerHTML='Your overall completion is <span class=\'big\'>{p}%</span> — story counts 60%, side activities 25%, collectibles 15%.'.replace('{p}',p.toFixed(1));
+}
+fillVeh($('veh-a'));fillVeh($('veh-b'));$('veh-b').selectedIndex=1;loadMissions();
+</script>
+</body>
+</html>
